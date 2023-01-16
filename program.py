@@ -13,11 +13,11 @@ root.resizable(False, False)
 frame=customtkinter.CTkFrame(master=root)
 frame.pack(pady=20, padx=60, fill="both", expand=True)
 
-label=customtkinter.CTkLabel(master=frame, text="Huffman Encoding")
+label=customtkinter.CTkLabel(master=frame, text="Let's Encode & Decode", font=("Libre Baskerville", 25))
 label.pack(pady=12, padx=10)
 root.title("HUFFMAN ENCODING IMPLEMENTATION")
 
-textbox_encode=customtkinter.CTkTextbox(master=frame, height=50, width=300 ,font=('Arial', 14))
+textbox_encode=customtkinter.CTkTextbox(master=frame, height=70, width=400 ,font=("Libre Baskerville", 14))
 textbox_encode.pack(padx=10, pady=10)
 
 H=AnotherHuffman()
@@ -83,19 +83,19 @@ def delete_all_files():
     os.remove("sample.bin")
     os.remove("output.txt")
 
-encode_button = customtkinter.CTkButton(master=frame, text="Encode", font=('Arial', 14), command=click_encode)
+encode_button = customtkinter.CTkButton(master=frame, text="Encode", font=("Libre Baskerville", 20), command=click_encode)
 encode_button.pack(padx=10, pady=10)
 
-textbox_encoded=customtkinter.CTkTextbox(master=frame, height=50, width=300 ,font=('Arial', 9))
+textbox_encoded=customtkinter.CTkTextbox(master=frame, height=70, width=400 ,font=("Libre Baskerville", 9))
 textbox_encoded.pack(padx=10, pady=10)
 
-decode_button = customtkinter.CTkButton(master=frame, text="Decode", font=('Arial', 14), command=click_decode)
+decode_button = customtkinter.CTkButton(master=frame, text="Decode", font=("Libre Baskerville", 20), command=click_decode)
 decode_button.pack(padx=10, pady=10)
 
-textbox_decoded=customtkinter.CTkTextbox(master=frame, height=50, width=300, font=('Arial', 14))
+textbox_decoded=customtkinter.CTkTextbox(master=frame, height=70, width=400, font=("Libre Baskerville", 14))
 textbox_decoded.pack(padx=10, pady=10)
 
-clear_btn=customtkinter.CTkButton(master=frame, text="Clear", font=('Arial', 14), command=clear_all_fields)
+clear_btn=customtkinter.CTkButton(master=frame, text="Clear", font=("Libre Baskerville", 20), command=clear_all_fields)
 clear_btn.pack(padx=10, pady=10)
 
 root.mainloop()
