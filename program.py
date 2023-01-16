@@ -2,17 +2,22 @@ import os
 import tkinter as tk
 from tkinter import *
 from AnotherHuffman import AnotherHuffman
-import time
+import customtkinter
 
-root = tk.Tk()
+customtkinter.set_appearance_mode("dark")
+customtkinter.set_default_color_theme("dark-blue")
 
-root.geometry("400x600")
+root = customtkinter.CTk()
+root.resizable(False, False)
+
+frame=customtkinter.CTkFrame(master=root)
+frame.pack(pady=20, padx=60, fill="both", expand=True)
+
+label=customtkinter.CTkLabel(master=frame, text="Huffman Encoding")
+label.pack(pady=12, padx=10)
 root.title("HUFFMAN ENCODING IMPLEMENTATION")
 
-label=tk.Label(root, text="Let's Decode and Encode!", font=('Arial', 18))
-label.pack(padx=20, pady=20)
-
-textbox_encode=tk.Text(root, height=3 ,font=('Arial', 14))
+textbox_encode=customtkinter.CTkTextbox(master=frame, height=50, width=300 ,font=('Arial', 14))
 textbox_encode.pack(padx=10, pady=10)
 
 H=AnotherHuffman()
@@ -78,22 +83,20 @@ def delete_all_files():
     os.remove("sample.bin")
     os.remove("output.txt")
 
-encode_button = tk.Button(root, text="Encode", font=('Arial', 14), command=click_encode)
+encode_button = customtkinter.CTkButton(master=frame, text="Encode", font=('Arial', 14), command=click_encode)
 encode_button.pack(padx=10, pady=10)
 
-textbox_encoded=tk.Text(root, height=7 ,font=('Arial', 9))
+textbox_encoded=customtkinter.CTkTextbox(master=frame, height=50, width=300 ,font=('Arial', 9))
 textbox_encoded.pack(padx=10, pady=10)
 
-decode_button = tk.Button(root, text="Decode", font=('Arial', 14), command=click_decode)
+decode_button = customtkinter.CTkButton(master=frame, text="Decode", font=('Arial', 14), command=click_decode)
 decode_button.pack(padx=10, pady=10)
 
-textbox_decoded=tk.Text(root, height=4, font=('Arial', 14))
+textbox_decoded=customtkinter.CTkTextbox(master=frame, height=50, width=300, font=('Arial', 14))
 textbox_decoded.pack(padx=10, pady=10)
 
-clear_btn=tk.Button(root, text="Clear", font=('Arial', 14), command=clear_all_fields)
+clear_btn=customtkinter.CTkButton(master=frame, text="Clear", font=('Arial', 14), command=clear_all_fields)
 clear_btn.pack(padx=10, pady=10)
-
-anotherBtn=tk.Button
 
 root.mainloop()
 
